@@ -64,9 +64,18 @@ Sample$ActivityCode = ActivityCode
 
 #Build Tidy Data
 
+temp = matrix()
+temp = cbind(temp,  data.frame(subjects))
+temp = cbind(temp, data.frame(activity))
+temp = cbind(temp, meanSample)
+ colnames(temp) = c("2","SubjectId","ActivityInt", "Mean")
 
-temp = data.frame(activity)
-temp$mean = meanSample
-temp$subjectId = subjects
+agg =aggregate(temp, by=list(temp$ActivityInt, temp$SubjectId), FUN=mean)
 
- colnames(temp) = c("ActivityInt","mean","SubjectId")
+install.packages('reshape')
+library(reshape)
+
+t =cast(agg, SubjectId ~ ActivityInt)
+
+
+
