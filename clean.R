@@ -65,8 +65,8 @@ Sample$ActivityCode = ActivityCode
 #Build Tidy Data
 
 
-table(Sample$SubjectId, Sample$ActivityInt)
+temp = data.frame(activity)
+temp$mean = meanSample
+temp$subjectId = subjects
 
-
-
-
+ colnames(temp) = c("ActivityInt","mean","SubjectId")
