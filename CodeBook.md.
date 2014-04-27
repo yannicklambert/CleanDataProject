@@ -1,0 +1,13 @@
+## CodeBook
+
+##
+
+#List of variable of tidySample
+
+SubjectId: identifiant mesure (1 to 30)
+WALKING: avg for walking
+WALKING_UPSTAIRS: avg for walking upstairs
+WALKING_DOWNSTAIRS: avg for walking downstairs
+SITTING: avg for sitting
+STANDING: avg for standing
+LAYING: avg for laying
